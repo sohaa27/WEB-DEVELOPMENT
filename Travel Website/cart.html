@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart Page</title>
+    <style>
+        /* CSS styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        #cart {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        #cart-items {
+            margin-top: 10px;
+        }
+
+        .cart-item {
+            border-bottom: 1px solid #ccc;
+            padding: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Cart Page</h1>
+    <div id="cart">
+        <div id="cart-items">
+            <!-- Cart items will be displayed here -->
+        </div>
+    </div>
+
+    <script>
+        //  function displayCartItems() {
+        //     const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+        //     const cartItemsDiv = document.getElementById('cart-items');
+        //     cartItemsDiv.innerHTML = '';
+        //     let totalPrice = 0;
+        //     cartItems.forEach(item => {
+        //         const itemDiv = document.createElement('div');
+        //         itemDiv.classList.add('cart-item');
+        //         itemDiv.innerHTML = `<p>${item.name} - $${item.price}</p>`;
+        //         cartItemsDiv.appendChild(itemDiv);
+        //         totalPrice += item.price;
+        //     });
+        //     cartItemsDiv.innerHTML += `<strong>Total Price: $${totalPrice.toFixed(2)}</strong>`;
+        // }
+
+        // // Call the function to display cart items
+        // displayCartItems();
+        const cart4 = JSON.parse(localStorage.getItem('cart2')); //loads array of objects stored on local storage in this page/script i.e. in cart2 array
+    // let t = cart3.reduce((a,c) => a+c.price, 0); this is same as below for loop- for loop for addition of price of items in a cart  
+    let temp2=0;
+    for(let i=0;i<cart4.length;i++)
+    {
+        temp2 = temp2 + cart4[i].price;
+    }
+    const cartProducts = document.querySelector('.cart-products'); // selects particular element
+    const p = document.createElement('div'); // creates a HTML element
+    p.classList.add('cart-products'); // adds class to the HTML element
+    cart4.forEach((el) => { // or use function(el){}- old function  instead of arrow function (el) => {}
+    // const p = document.createElement('div'); // creates a HTML element
+    // p.classList.add('cart-products'); // adds class to the HTML element
+    const pn = document.createElement('h2');
+    pn.textContent = el.name //textContent- inside HTML element, here h2, it adds text into html element
+    p.appendChild(pn);
+    const pp = document.createElement('h5');
+    p.appendChild(pp);
+    pp.textContent = "Price = " + el.price;
+    cartProducts.appendChild(p);
+    })
+    const c = document.createElement('div'); // creates a HTML element
+    c.classList.add('cart-price');
+    const pd = document.createElement('h2');
+    pd.textContent = "Price Details:";
+    c.appendChild(pd);
+    const ca = document.createElement('h5');
+    ca.textContent = "Total Cart Amount: " + temp2;
+    c.appendChild(ca);
+    cartProducts.appendChild(c);
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body class="login-body">
+    <div class="login-container">
+        <h1>Login</h1>
+        <form id="loginForm">
+            <input type="email" id="email" placeholder="Email" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <input type="submit" value="Login" class="submit-btn">
+        </form>
+        <p id="error-msg" class="error-msg"></p>
+    </div>
+
+    <script>
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent form submission
+
+            // Get user input
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+
+            // Dummy validation - Replace with your actual authentication logic
+            if (email === "user@example.com" && password === "password") {
+                // Successful login
+                alert("Login successful!");
+                // Redirect to dashboard or desired page
+                window.location.href = "dashboard.html";
+            } else {
+                // Failed login
+                document.getElementById("error-msg").innerText = "Invalid email or password";
+            }
+        });
+    </script>
+</body>
+</html>

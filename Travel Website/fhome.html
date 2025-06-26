@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FoodExpress - Demo with Images</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+    body { background: #fff; color: #333; }
+
+    header {
+      background: #e53935;
+      color: white;
+      padding: 1.2rem;
+      font-size: 1.8rem;
+      text-align: center;
+    }
+
+    .container {
+      padding: 2rem;
+    }
+
+    .restaurant {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border: 1px solid #ddd;
+      margin-bottom: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      overflow: hidden;
+    }
+
+    .restaurant img {
+      width: 100%;
+      max-width: 500px;
+      height: auto;
+      border-bottom: 1px solid #eee;
+    }
+
+    .restaurant-info {
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .restaurant-info h3 {
+      color: #e53935;
+      margin-bottom: 0.5rem;
+    }
+
+    .restaurant-info p {
+      color: #555;
+      font-size: 0.9rem;
+    }
+
+    footer {
+      background: #f1f1f1;
+      padding: 1rem;
+      text-align: center;
+      font-size: 0.85rem;
+      color: #777;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>FoodExpress</header>
+
+  <div class="container">
+
+    <div class="restaurant">
+      <img src="https://source.unsplash.com/600x400/?burger" alt="Burger Palace">
+      <div class="restaurant-info">
+        <h3>Burger Palace</h3>
+        <p>4.6 ★ · 25 mins · ₹150 for two</p>
+        <p>Juicy burgers and crispy fries delivered hot!</p>
+      </div>
+    </div>
+
+    <div class="restaurant">
+      <img src="https://source.unsplash.com/600x400/?salad" alt="Green Bowl">
+      <div class="restaurant-info">
+        <h3>Green Bowl</h3>
+        <p>4.3 ★ · 20 mins · ₹200 for two</p>
+        <p>Healthy and fresh salad bowls made to order.</p>
+      </div>
+    </div>
+
+    <div class="restaurant">
+      <img src="https://source.unsplash.com/600x400/?pizza" alt="Mama Mia Pizza">
+      <div class="restaurant-info">
+        <h3>Mama Mia Pizza</h3>
+        <p>4.5 ★ · 30 mins · ₹250 for two</p>
+        <p>Authentic Italian pizzas with wood-fired flavor.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    &copy; 2025 FoodExpress. All rights reserved.
+  </footer>
+
+</body>
+</html>
